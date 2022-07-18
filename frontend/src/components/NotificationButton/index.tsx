@@ -8,18 +8,19 @@ import './styles.css';
        saleId:number;   
     }
 
-function handClic(id : number){
-    axios(`${BASE_URL}/sales/${id}/notification`).then(response => {
+function handleClick(id : number){
+    axios(`${BASE_URL}/sales/${id}/notification`)
+    .then(response => {
 
         toast.info("SMS enviado com sucesso !");
-    })
+    });
 }
 
 
 function NotificationButton({saleId} : props) {
 
     return (
-        <div className="dsmeta-red-btn" onClick={() => handClic(saleId)}>
+        <div className="dsmeta-red-btn" onClick={() => handleClick(saleId)}>
             <img src={iconbutton} alt="Notificar" />
         </div>
 
