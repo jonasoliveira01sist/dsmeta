@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { toast } from 'react-toastify';
 import iconbutton from '../../assets/img/notification-icon.svg';
 import { BASE_URL } from '../../utils/request';
 import './styles.css';
@@ -9,7 +10,8 @@ import './styles.css';
 
 function handClic(id : number){
     axios(`${BASE_URL}/sales/${id}/notification`).then(response => {
-        console.log("sucesso");
+
+        toast.info("SMS enviado com sucesso !");
     })
 }
 
